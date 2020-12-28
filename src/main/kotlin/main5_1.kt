@@ -1,4 +1,4 @@
-class main5_1
+
 
 data class Comments (
   val  count : Int,
@@ -43,7 +43,9 @@ data class Donut (
 
 class Placeholder
 
-data class Post(
+data class Post
+
+constructor (
     var id: Int,
     var owner_id: Int,
     var from_id: Int,

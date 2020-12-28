@@ -1,21 +1,19 @@
-class WallService(
-    _arrayOfPosts: Array<Post>,
-    _nextID: Int = 0
-) {
+class WallService {
 
-    private var nextID: Int = _nextID
-    private var arrayOfPosts: Array<Post> = _arrayOfPosts
+    var nextID: Int = 0
+    private var arrayOfPosts: Array<Post?> = arrayOfNulls(100_000)
 
 
     fun add(post: Post): Post {
         post.id = nextID
+        arrayOfPosts[nextID] = post
         nextID++
         return post
     }
 
     fun update(post: Post): Boolean {
         for (n in arrayOfPosts) {
-            if (post.id == n.id) {
+            if (post.id == n?.id) {
                 //update
                 n.owner_id = post.owner_id
                 n.from_id = post.from_id
