@@ -17,7 +17,7 @@ class WallService(
         for (n in arrayOfPosts) {
             if (post.id == n.id) {
                 //update
-                n.owner_id   post.owner_id
+                n.owner_id = post.owner_id
                 n.from_id = post.from_id
                 n.created_by = post.created_by
                 n.text = post.text
