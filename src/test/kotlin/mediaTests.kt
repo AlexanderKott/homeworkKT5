@@ -14,7 +14,7 @@ class mediaTests {
         val view = Views(10)
         val donuts = Donut(true, 1, Placeholder(), true, "")
 
-        val audio = Audio(1,1,1)
+        val audio = AudioAttachment()
 
         //Пост для тестирования id 1
         val post1 = Post(
@@ -22,10 +22,11 @@ class mediaTests {
             1, 1, true, comments, coperra, likes, reps, view, "str", true,
             true, true, true, true,
             true, 1, donuts,1, Geo("","", Place())
-            , Array(1){audio} )
+            , Array(1){ audio } )
 
 
-        assertEquals(post1.att[0].id, 1)
+
+        assertEquals((post1.attechments?.get(0)  as AudioAttachment ).audio.id , 1)
 
     }
 
@@ -38,7 +39,7 @@ class mediaTests {
         val view = Views(10)
         val donuts = Donut(true, 1, Placeholder(), true, "")
 
-        val video = Video(1,1,1)
+        val video = VideoAttachment()
 
         //Пост для тестирования id 1
         val post1 = Post(
@@ -49,7 +50,7 @@ class mediaTests {
             , Array(1){video} )
 
 
-        assertEquals(post1.att[0].id, 1)
+        assertEquals((post1.attechments?.get(0)  as VideoAttachment ).video.id , 1)
 
     }
 

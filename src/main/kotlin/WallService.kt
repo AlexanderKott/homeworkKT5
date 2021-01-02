@@ -1,6 +1,6 @@
 class WallService(size :Int) {
 
-    var nextID: Int = 0
+            var nextID: Int = 0
     private var arrayOfPosts: Array<Post?> = arrayOfNulls(size)
 
 
@@ -38,7 +38,7 @@ class WallService(size :Int) {
                 n.donut = post.donut
                 n.signerId  = post.signerId
                 n.geo  = post.geo
-                n.att = post.att
+                n.attechments = post.attechments
                 return true
             }
         }
