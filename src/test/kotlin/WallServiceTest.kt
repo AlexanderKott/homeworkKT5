@@ -21,19 +21,18 @@ internal class WallServiceTest {
             1, 1, 1, 1, 1, "text",
             1, 1, true, comments, coperra, likes, reps, view, "str", true,
             true, true, true, true,
-            true, 1, donuts
-        )
+            true, 1, donuts,1, Geo("","", Place()))
 
         //Пост для тестирования id 2
         val post2 = Post(
             1, 1, 1, 1, 1, "text",
             1, 1, true, comments, coperra, likes, reps, view, "str", true,
             true, true, true, true,
-            true, 1, donuts
-        )
+            true, 1, donuts,1, Geo("","", Place()))
+
 
         //инициализация WallService
-        val ws = WallService()
+        val ws = WallService(111)
 
         ws.add(post1) //Добавляем  одну запись
 
@@ -63,11 +62,10 @@ internal class WallServiceTest {
             0, 1, 1, 1, 1, "text",
             1, 1, true, comments, coperra, likes, reps, view, "str", true,
             true, true, true, true,
-            true, 1, donuts
-        )
+            true, 1, donuts,1, Geo("","", Place()))
 
         //инициализация WallService
-        val ws = WallService()
+        val ws = WallService(111)
         ws.add(post1)  //У поста номер 0
 
         //Создаем пост с id 0
@@ -75,8 +73,8 @@ internal class WallServiceTest {
             0, 1, 1, 1, 1, "text",
             1, 1, true, comments, coperra, likes, reps, view, "str", true,
             true, true, true, true,
-            true, 1, donuts
-        )
+            true, 1, donuts,1, Geo("","", Place()))
+
 
         assertEquals(ws.update(post2), true)
     }
@@ -96,15 +94,14 @@ internal class WallServiceTest {
         val donuts = Donut(true, 1, Placeholder(), true, "")
 
         //инициализация WallService
-        val ws = WallService()
+        val ws = WallService(111)
 
         //Создаем пост с id 5 которого нет в массиве
         val post1 = Post(
             5, 1, 1, 1, 1, "text",
             1, 1, true, comments, coperra, likes, reps, view, "str", true,
             true, true, true, true,
-            true, 1, donuts
-        )
+            true, 1, donuts,1, Geo("","", Place()))
 
         assertEquals(ws.update(post1), false)
     }

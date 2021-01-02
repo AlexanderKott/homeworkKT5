@@ -42,34 +42,43 @@ data class Donut (
 
 
 class Placeholder
+class Place
 
-data class Post
+data class Geo (
+    var type: String?,
+    var coords : String?,
+    var place: Place?
+    )
 
-constructor (
+data class Post constructor (
     var id: Int,
     var owner_id: Int,
     var from_id: Int,
     var created_by: Int,
     var date: Int,
-    var text: String,
+    var text: String?,
     var reply_owner_id: Int,
     var reply_post_id: Int,
     var friends_only: Boolean,
-    var comments: Comments,
-    var copyright: Copyright,
-    var likes: Likes,
-    var reposts: Reposts,
-    var views: Views,
+    var comments: Comments?,
+    var copyright: Copyright?,
+    var likes: Likes?,
+    var reposts: Reposts?,
+    var views: Views?,
     var post_type: String,
     var can_pin: Boolean,
     var can_delete: Boolean,
     var can_edit: Boolean,
     var is_pinned: Boolean,
     var marked_as_ads: Boolean,
-    var is_favorite: Boolean,
+    var is_favorite: Boolean?,
     var postponed_id: Int,
-    var donut: Donut
+    var donut: Donut,
+    var signerId: Int,
+    var geo: Geo
     )
+
+
 
 fun main() {
       

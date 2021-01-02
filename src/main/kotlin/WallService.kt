@@ -1,7 +1,7 @@
-class WallService {
+class WallService(size :Int) {
 
     var nextID: Int = 0
-    private var arrayOfPosts: Array<Post?> = arrayOfNulls(100_000)
+    private var arrayOfPosts: Array<Post?> = arrayOfNulls(size)
 
 
     fun add(post: Post): Post {
@@ -36,7 +36,8 @@ class WallService {
                 n.is_favorite = post.is_favorite
                 n.postponed_id = post.postponed_id
                 n.donut = post.donut
-
+                n.signerId  = post.signerId
+                n.geo  = post.geo
                 return true
             }
 
