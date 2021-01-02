@@ -21,14 +21,15 @@ internal class WallServiceTest {
             1, 1, 1, 1, 1, "text",
             1, 1, true, comments, coperra, likes, reps, view, "str", true,
             true, true, true, true,
-            true, 1, donuts,1, Geo("","", Place()))
+            true, 1, donuts,1, Geo("","", Place())
+        , emptyArray())
 
         //Пост для тестирования id 2
         val post2 = Post(
             1, 1, 1, 1, 1, "text",
             1, 1, true, comments, coperra, likes, reps, view, "str", true,
             true, true, true, true,
-            true, 1, donuts,1, Geo("","", Place()))
+            true, 1, donuts,1, Geo("","", Place()), emptyArray())
 
 
         //инициализация WallService
@@ -62,7 +63,7 @@ internal class WallServiceTest {
             0, 1, 1, 1, 1, "text",
             1, 1, true, comments, coperra, likes, reps, view, "str", true,
             true, true, true, true,
-            true, 1, donuts,1, Geo("","", Place()))
+            true, 1, donuts,1, Geo("","", Place()), emptyArray())
 
         //инициализация WallService
         val ws = WallService(111)
@@ -73,7 +74,7 @@ internal class WallServiceTest {
             0, 1, 1, 1, 1, "text",
             1, 1, true, comments, coperra, likes, reps, view, "str", true,
             true, true, true, true,
-            true, 1, donuts,1, Geo("","", Place()))
+            true, 1, donuts,1, Geo("","", Place()),emptyArray())
 
 
         assertEquals(ws.update(post2), true)
@@ -101,7 +102,7 @@ internal class WallServiceTest {
             5, 1, 1, 1, 1, "text",
             1, 1, true, comments, coperra, likes, reps, view, "str", true,
             true, true, true, true,
-            true, 1, donuts,1, Geo("","", Place()))
+            true, 1, donuts,1, Geo("","", Place()), emptyArray())
 
         assertEquals(ws.update(post1), false)
     }

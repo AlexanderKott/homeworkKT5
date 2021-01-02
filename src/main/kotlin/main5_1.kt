@@ -75,7 +75,8 @@ data class Post constructor (
     var postponed_id: Int,
     var donut: Donut,
     var signerId: Int,
-    var geo: Geo
+    var geo: Geo,
+    var att: Array<Attachment>
     )
 
 

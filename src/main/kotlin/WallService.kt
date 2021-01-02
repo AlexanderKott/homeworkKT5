@@ -38,11 +38,10 @@ class WallService(size :Int) {
                 n.donut = post.donut
                 n.signerId  = post.signerId
                 n.geo  = post.geo
+                n.att = post.att
                 return true
             }
-
         }
-
         return false
     }
 
