@@ -2,7 +2,7 @@ class WallService(size :Int) {
 
             var nextID: Int = 0
     private var arrayOfPosts: Array<Post?> = arrayOfNulls(size)
-    private var comments = emptyArray<Comment>()
+    private var comments : Array<Comment?> = arrayOfNulls(size)
 
 
     fun createComment(comment: Comment) {
