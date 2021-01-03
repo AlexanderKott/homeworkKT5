@@ -2,7 +2,18 @@ class WallService(size :Int) {
 
             var nextID: Int = 0
     private var arrayOfPosts: Array<Post?> = arrayOfNulls(size)
+    private var comments = emptyArray<Comment>()
 
+
+    fun createComment(comment: Comment) {
+        for (n in arrayOfPosts){
+            if (n?.id == comment.postId){
+                comments[comment.postId] = comment
+                return
+            }
+        }
+        throw PostNotFoundException("PostNotFoundException")
+    }
 
     fun add(post: Post): Post {
         post.id = nextID
@@ -19,22 +30,22 @@ class WallService(size :Int) {
                 n.from_id = post.from_id
                 n.created_by = post.created_by
                 n.text = post.text
-                n.reply_owner_id = post.reply_owner_id
-                n.reply_post_id = post.reply_post_id
-                n.friends_only = post.friends_only
+                n.replyOwnerId  = post.replyOwnerId
+                n.replyPossId  = post.replyPossId
+                n.friendsOnly  = post.friendsOnly
                 n.comments = post.comments
                 n.copyright = post.copyright
                 n.likes = post.likes
                 n.reposts = post.reposts
                 n.views = post.views
-                n.post_type = post.post_type
-                n.can_pin = post.can_pin
-                n.can_delete = post.can_delete
-                n.can_edit = post.can_edit
-                n.is_pinned = post.is_pinned
-                n.marked_as_ads = post.marked_as_ads
-                n.is_favorite = post.is_favorite
-                n.postponed_id = post.postponed_id
+                n.postType = post.postType
+                n.canPin = post.canPin
+                n.canDelete = post.canDelete
+                n.canEdit = post.canEdit
+                n.isPinned = post.isPinned
+                n.markedAsAds = post.markedAsAds
+                n.isFavorite = post.isFavorite
+                n.postponedId = post.postponedId
                 n.donut = post.donut
                 n.signerId  = post.signerId
                 n.geo  = post.geo
